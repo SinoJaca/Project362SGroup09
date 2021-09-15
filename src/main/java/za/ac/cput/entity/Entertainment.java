@@ -1,4 +1,5 @@
 package za.ac.cput.entity;
+
 /**
  * Entertainment.java
  * Entity for Entertainment
