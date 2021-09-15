@@ -4,7 +4,7 @@ package za.ac.cput.entity;
  * Entertainment.java
  * Entity for Entertainment
  * Author: Andy Hine(219259038)
- * Date: 15 September 2021
+ * Date: 16 September 2021
  **/
 
 public class Entertainment
