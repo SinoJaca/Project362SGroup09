@@ -11,7 +11,7 @@ import za.ac.cput.entity.Login;
 
 public class LoginFactory {
 
-    public Login createLogin(String studentNumber, String username, String password)
+    public static Login createLogin(String studentNumber, String username, String password)
     {
         return new Login.Builder().setStudentNo(studentNumber).setUsername(username).setPassword(password).build();
     }

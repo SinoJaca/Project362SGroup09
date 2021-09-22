@@ -11,7 +11,7 @@ import za.ac.cput.entity.Student;
 
 public class StudentFactory {
 
-    public Student createStudent(String studentNumber, String firstName, String lastName, String emailAddress, String phoneNumber)
+    public static Student createStudent(String studentNumber, String firstName, String lastName, String emailAddress, String phoneNumber)
     {
         return new Student.Builder().setStudentNumber(studentNumber)
                                     .setFirstName(firstName)
