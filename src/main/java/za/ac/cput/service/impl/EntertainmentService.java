@@ -12,13 +12,16 @@ import za.ac.cput.entity.Entertainment;
 import za.ac.cput.repository.EntertainmentRepository;
 import za.ac.cput.service.IEntertainmentService;
 
+import java.util.Set;
+import java.util.stream.Collectors;
+
 @Service
 public class EntertainmentService implements IEntertainmentService {
 
     private static EntertainmentService service= null;
 
     @Autowired
-    private EntertainmentRepository repository = null;
+    private EntertainmentRepository repository;
 
     public static EntertainmentService getService() {
 
@@ -30,13 +33,8 @@ public class EntertainmentService implements IEntertainmentService {
         return service;
     }
     @Override
-    public boolean saveEntertainment(Entertainment entertainment) {
+    public Set<Entertainment> getEntertainment() {
 
-        if(entertainment != null)
-        {
-            this.repository.save(entertainment);
-            return true;
-        }
-        return false;
+        return this.repository.findAll().stream().collect(Collectors.toSet());
     }
 }

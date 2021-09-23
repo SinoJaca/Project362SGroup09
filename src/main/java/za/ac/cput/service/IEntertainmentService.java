@@ -2,6 +2,8 @@ package za.ac.cput.service;
 
 import za.ac.cput.entity.Entertainment;
 
+import java.util.Set;
+
 /**
  * IEntertainmentService.java
  * Service for IEntertainment interface
@@ -11,5 +13,5 @@ import za.ac.cput.entity.Entertainment;
 
 public interface IEntertainmentService {
 
-    boolean saveEntertainment(Entertainment entertainment);
+    Set<Entertainment> getEntertainment();
 }
