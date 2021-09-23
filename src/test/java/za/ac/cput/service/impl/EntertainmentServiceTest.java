@@ -1,21 +1,26 @@
-package za.ac.cput.factory;
+package za.ac.cput.service.impl;
 
 /**
- * EntertainmentFactoryTest.java
- * Factory test for Entertainment
+ * EntertainmentServiceTest.java
+ * Test for EntertainmentService
  * Author: Andy Hine(219259038)
- * Date: 16 September 2021
+ * Date: 23 September 2021
  **/
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.context.SpringBootTest;
 import za.ac.cput.entity.Entertainment;
-
+import za.ac.cput.factory.EntertainmentFactory;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-class EntertainmentFactoryTest
-{
+@SpringBootTest
+class EntertainmentServiceTest {
+
+    @Autowired
+    private EntertainmentService service = EntertainmentService.getService();
     private Entertainment entertainment;
 
     @BeforeEach
@@ -27,9 +32,6 @@ class EntertainmentFactoryTest
     }
 
     @Test
-    void testCreateEntertainment()
-    {
-        System.out.println(entertainment);
+    void testCreateEntertainment() {assertTrue(service.saveEntertainment(entertainment));
     }
-
-}
+    }
