@@ -12,26 +12,26 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import za.ac.cput.entity.Entertainment;
-import za.ac.cput.factory.EntertainmentFactory;
+import java.util.Set;
 
-import static org.junit.jupiter.api.Assertions.*;
+
 
 @SpringBootTest
 class EntertainmentServiceTest {
 
     @Autowired
     private EntertainmentService service = EntertainmentService.getService();
-    private Entertainment entertainment;
+    private Set<Entertainment> entertainmentList;
 
-    @BeforeEach
-    void setUp() {
-
-        entertainment =new EntertainmentFactory().createEntertainment("2Majozi and friends at The Clubhouse",
-                "Lets enjoy this sunday with fun outside activities", "26 September 2021",
-                "12:00 - 16:30", "5 Diamond St,Constantia, Cape Town 7850","R75");
-    }
 
     @Test
-    void testCreateEntertainment() {assertTrue(service.saveEntertainment(entertainment));
+    void testCreateEntertainment() {
+        entertainmentList = service.getEntertainment();
+
+        for(Entertainment e: entertainmentList)
+        {
+            System.out.println(e.toString());
+        }
     }
+
     }
