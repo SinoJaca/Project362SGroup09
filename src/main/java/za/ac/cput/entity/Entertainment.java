@@ -9,7 +9,7 @@ package za.ac.cput.entity;
 
 public class Entertainment
 {
-    private String ChooseEvent, about, date, time, location, cost;
+    private String ChooseEvent, about, date, time, location, cost,security;
 
     public Entertainment(Entertainment.Builder builder) {
         this.ChooseEvent = builder.ChooseEvent;
@@ -18,6 +18,7 @@ public class Entertainment
         this.time = builder.time;
         this.location = builder.location;
         this.cost = builder.cost;
+        this.security = builder.security;
     }
 
     //getters
@@ -36,6 +37,10 @@ public class Entertainment
     }
     public String getCost() {
         return cost;
+    }
+    public String getSecurity()
+    {
+        return security;
     }
 
     //setters
@@ -58,6 +63,9 @@ public class Entertainment
         this.cost = cost;
     }
 
+    public void setSecurity(String security)
+    {this.security = security;}
+
     @Override
     public String toString() {
         return "Entertainment{" +
@@ -67,13 +75,13 @@ public class Entertainment
                 ", Time='" + time + '\'' +
                 ", Location='" + location + '\'' +
                 ", Cost='" + cost + '\'' +
+                ", Security='" + security + '\'' +
                 '}';
     }
 
     public static class Builder {
-
         //attributes
-        private String ChooseEvent, about, date, time, location, cost;
+        private String ChooseEvent, about, date, time, location, cost,security;
 
         //setters for builder pattern
         public Entertainment.Builder setChooseEvent(String chooseEvent) {
@@ -106,6 +114,11 @@ public class Entertainment
             return this;
         }
 
+        public Entertainment.Builder setSecurity(String security){
+            this.security = security;
+            return  this;
+        }
+
         public Entertainment build()
         {
             return new Entertainment(this);
@@ -119,6 +132,7 @@ public class Entertainment
             this.time = entertainment.time;
             this.location = entertainment.location;
             this.cost = entertainment.cost;
+            this.security = entertainment.security;
 
             return this;
         }
