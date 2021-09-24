@@ -21,7 +21,7 @@ class EntertainmentFactoryTest
     @BeforeEach
     void setUp() {
 
-        entertainment =new EntertainmentFactory().createEntertainment("2Majozi and friends at The Clubhouse",
+        entertainment =new EntertainmentFactory().createEntertainment(453,"2Majozi and friends at The Clubhouse",
                 "Lets enjoy this sunday with fun outside activities", "26 September 2021",
                 "12:00 - 16:30", "5 Diamond St,Constantia, Cape Town 7850","R75","Viking Protection Services ");
     }

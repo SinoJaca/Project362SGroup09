@@ -9,9 +9,11 @@ package za.ac.cput.entity;
 
 public class Entertainment
 {
+    private int eventCode;
     private String ChooseEvent, about, date, time, location, cost,security;
 
     public Entertainment(Entertainment.Builder builder) {
+        this.eventCode = builder.eventCode;
         this.ChooseEvent = builder.ChooseEvent;
         this.about = builder.about;
         this.date = builder.date;
@@ -22,6 +24,7 @@ public class Entertainment
     }
 
     //getters
+    public int getEventCode(){return  eventCode;}
     public String getChooseEvent() {
         return ChooseEvent;
     }
@@ -44,6 +47,8 @@ public class Entertainment
     }
 
     //setters
+
+    public void setEventCode(int eventCode) {this.eventCode = eventCode;}
     public void setChooseEvent(String ChooseEvent) {
         this.ChooseEvent = ChooseEvent;
     }
@@ -62,13 +67,12 @@ public class Entertainment
     public void setCost(String cost) {
         this.cost = cost;
     }
-
-    public void setSecurity(String security)
-    {this.security = security;}
+    public void setSecurity(String security) {this.security = security;}
 
     @Override
     public String toString() {
         return "Entertainment{" +
+                "Event=" + eventCode +
                 "Choose Event=" + ChooseEvent +
                 ", About='" + about + '\'' +
                 ", Date='" + date + '\'' +
@@ -81,9 +85,15 @@ public class Entertainment
 
     public static class Builder {
         //attributes
+        private int eventCode;
         private String ChooseEvent, about, date, time, location, cost,security;
 
         //setters for builder pattern
+        public Entertainment.Builder setEventCode(int eventCode){
+            this.eventCode = eventCode;
+            return this;
+        }
+
         public Entertainment.Builder setChooseEvent(String chooseEvent) {
             this.ChooseEvent = chooseEvent;
             return this;
@@ -126,6 +136,7 @@ public class Entertainment
 
         public Entertainment.Builder copy(Builder entertainment)
         {
+            this.eventCode = entertainment.eventCode;
             this.ChooseEvent = entertainment.ChooseEvent;
             this.about = entertainment.about;
             this.date = entertainment.date;
