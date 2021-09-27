@@ -12,5 +12,5 @@ import org.springframework.stereotype.Repository;
 import za.ac.cput.entity.Entertainment;
 
 @Repository
-public interface EntertainmentRepository extends JpaRepository<Entertainment,String>{
+public interface EntertainmentRepository extends JpaRepository<Entertainment,Integer>{
 }
