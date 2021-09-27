@@ -1,5 +1,8 @@
 package za.ac.cput.entity;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
+
 /**
  * Entertainment.java
  * Entity for Entertainment
