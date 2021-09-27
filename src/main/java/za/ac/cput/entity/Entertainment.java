@@ -6,9 +6,10 @@ package za.ac.cput.entity;
  * Author: Andy Hine(219259038)
  * Date: 16 September 2021
  **/
-
+@Entity
 public class Entertainment
 {
+    @Id
     private int eventCode;
     private String ChooseEvent, about, date, time, location, cost,security;
 
