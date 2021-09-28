@@ -9,18 +9,22 @@ package za.ac.cput.entity;
 
 public class Entertainment
 {
-    private String ChooseEvent, about, date, time, location, cost;
+    private int eventCode;
+    private String ChooseEvent, about, date, time, location, cost,security;
 
     public Entertainment(Entertainment.Builder builder) {
+        this.eventCode = builder.eventCode;
         this.ChooseEvent = builder.ChooseEvent;
         this.about = builder.about;
         this.date = builder.date;
         this.time = builder.time;
         this.location = builder.location;
         this.cost = builder.cost;
+        this.security = builder.security;
     }
 
     //getters
+    public int getEventCode(){return  eventCode;}
     public String getChooseEvent() {
         return ChooseEvent;
     }
@@ -37,8 +41,14 @@ public class Entertainment
     public String getCost() {
         return cost;
     }
+    public String getSecurity()
+    {
+        return security;
+    }
 
     //setters
+
+    public void setEventCode(int eventCode) {this.eventCode = eventCode;}
     public void setChooseEvent(String ChooseEvent) {
         this.ChooseEvent = ChooseEvent;
     }
@@ -57,25 +67,33 @@ public class Entertainment
     public void setCost(String cost) {
         this.cost = cost;
     }
+    public void setSecurity(String security) {this.security = security;}
 
     @Override
     public String toString() {
         return "Entertainment{" +
+                "Event=" + eventCode +
                 "Choose Event=" + ChooseEvent +
                 ", About='" + about + '\'' +
                 ", Date='" + date + '\'' +
                 ", Time='" + time + '\'' +
                 ", Location='" + location + '\'' +
                 ", Cost='" + cost + '\'' +
+                ", Security='" + security + '\'' +
                 '}';
     }
 
     public static class Builder {
-
         //attributes
-        private String ChooseEvent, about, date, time, location, cost;
+        private int eventCode;
+        private String ChooseEvent, about, date, time, location, cost,security;
 
         //setters for builder pattern
+        public Entertainment.Builder setEventCode(int eventCode){
+            this.eventCode = eventCode;
+            return this;
+        }
+
         public Entertainment.Builder setChooseEvent(String chooseEvent) {
             this.ChooseEvent = chooseEvent;
             return this;
@@ -106,6 +124,11 @@ public class Entertainment
             return this;
         }
 
+        public Entertainment.Builder setSecurity(String security){
+            this.security = security;
+            return  this;
+        }
+
         public Entertainment build()
         {
             return new Entertainment(this);
@@ -113,12 +136,14 @@ public class Entertainment
 
         public Entertainment.Builder copy(Builder entertainment)
         {
+            this.eventCode = entertainment.eventCode;
             this.ChooseEvent = entertainment.ChooseEvent;
             this.about = entertainment.about;
             this.date = entertainment.date;
             this.time = entertainment.time;
             this.location = entertainment.location;
             this.cost = entertainment.cost;
+            this.security = entertainment.security;
 
             return this;
         }
