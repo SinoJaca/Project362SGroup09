@@ -10,12 +10,14 @@ import javax.persistence.Id;
  * Date: 16 September 2021
  **/
 @Entity
+
 public class Entertainment
 {
     @Id
     private int eventCode;
     private String ChooseEvent, about, date, time, location, cost,security;
 
+    protected Entertainment() {}
     public Entertainment(Entertainment.Builder builder) {
         this.eventCode = builder.eventCode;
         this.ChooseEvent = builder.ChooseEvent;
@@ -26,6 +28,8 @@ public class Entertainment
         this.cost = builder.cost;
         this.security = builder.security;
     }
+
+
 
     //getters
     public int getEventCode(){return  eventCode;}
