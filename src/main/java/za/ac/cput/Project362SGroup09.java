@@ -11,6 +11,6 @@ public class Project362SGroup09 {
         //Run spring application
             SpringApplication.run(Project362SGroup09.class, args);
 
-        //Run main application menu from the here when the file is run.
+        //Run main application menu from here when the file is run.
     }
 }
