@@ -9,6 +9,13 @@ import za.ac.cput.service.ILoginService;
 import java.util.Set;
 import java.util.stream.Collectors;
 
+/**
+ * LoginService.java
+ * Service implementation class for the Login
+ * Author: Jason Jaftha (217009301)
+ * Date: 22 September 2021
+ **/
+
 @Service
 public class LoginService implements ILoginService {
 

@@ -1,5 +1,12 @@
 package za.ac.cput.service.impl;
 
+/**
+ * StudentServiceTest.java
+ * Test class which test the Student Service class
+ * Author: Jason Jaftha (217009301)
+ * Date: 22 September 2021
+ */
+
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;

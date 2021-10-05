@@ -1,5 +1,12 @@
 package za.ac.cput.service.impl;
 
+/**
+ * StudentService.java
+ * Service implementation class for the Student
+ * Author: Jason Jaftha (217009301)
+ * Date: 22 September 2021
+ **/
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import za.ac.cput.entity.Student;
