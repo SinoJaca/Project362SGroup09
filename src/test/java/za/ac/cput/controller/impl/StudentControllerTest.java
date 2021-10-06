@@ -1,5 +1,12 @@
 package za.ac.cput.controller.impl;
 
+/**
+ * StudentControllerTest.java
+ * Test class for the Student controller
+ * Author: Jason Jaftha (217009301)
+ * Date: 4 October 2021
+ **/
+
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
