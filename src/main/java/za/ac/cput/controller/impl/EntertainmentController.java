@@ -8,7 +8,7 @@ package za.ac.cput.controller.impl;
  **/
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import za.ac.cput.entity.Entertainment;
@@ -24,7 +24,7 @@ public class EntertainmentController {
     @Autowired
     private EntertainmentService entertainmentService;
 
-    @PostMapping("/getEntertainment")
+    @GetMapping("/getEntertainment")
     public Set<Entertainment> getEntertainment()
     {
         return this.entertainmentService.getEntertainment();
