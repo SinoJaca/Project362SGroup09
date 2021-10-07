@@ -13,34 +13,22 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class BeverageFactoryTest {
 
-    Beverage bev1,bev2;
+   private static Beverage beverage,beverage1;
 
     @BeforeEach
     public void setUp() {
 
-        bev1= new BeverageFactory().createBeverage("Stoney", "Soft Drinks",27.00);
-        bev2= new BeverageFactory().createBeverage("Black coffee", "Caffeinated drinks", 22.00);
+        beverage = BeverageFactory.createBeverage(232,"Stoney", "Soft Drinks",27.00);
+        beverage1 = BeverageFactory.createBeverage(343, "Black coffee", "Caffeinated drinks", 22.00);
 
 
 
     }
     @Test
     public void testBeverageEquality() {
-        System.out.println(bev1.toString());
-        System.out.println(bev2.toString());
-        assertNotEquals(bev1, bev2);
+        System.out.println(beverage.toString());
+        System.out.println(beverage1.toString());
+        assertNotEquals(beverage, beverage1);
     }
-
-    @Test
-    void testBeverageIdentity() {
-        System.out.println("Bev1 and Bev2 are not the same");
-        assertNotSame(bev1, bev2);
-    }
-
-
-
-
-
-
 
 }

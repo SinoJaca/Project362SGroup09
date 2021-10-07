@@ -6,6 +6,9 @@ import za.ac.cput.entity.Beverage;
 import za.ac.cput.repository.BeverageRepository;
 import za.ac.cput.service.IBeverageService;
 
+import java.util.Set;
+import java.util.stream.Collectors;
+
 
 @Service
 public class BeverageService implements IBeverageService {
@@ -19,12 +22,8 @@ public class BeverageService implements IBeverageService {
         return service;
     }
     @Override
-    public boolean saveBeverage(Beverage beverage) {
-        if (beverage != null) {
-            this.repository.save(beverage);
-            return true;
-        }
-
-        return false;
+    public Set<Beverage> getBeverageList()
+    {
+        return this.repository.findAll().stream().collect(Collectors.toSet());
     }
 }

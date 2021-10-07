@@ -6,7 +6,12 @@ package za.ac.cput.entity;
     Author: Nonhlahla Hlungwani (218160658)
     Date: 14 September 2021
  */
+import javax.persistence.Entity;
+import javax.persistence.Id;
+
+@Entity
 public class Beverage {
+    @Id
     private int bevCode;
     private String bevName;
     private String category;
