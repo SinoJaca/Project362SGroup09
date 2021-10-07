@@ -7,6 +7,8 @@ import org.springframework.boot.test.context.SpringBootTest;
 import za.ac.cput.entity.Beverage;
 import za.ac.cput.factory.BeverageFactory;
 
+import java.util.Set;
+
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 
@@ -14,18 +16,16 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 class BeverageServiceTest{
     @Autowired
     private BeverageService service = BeverageService.getService();
-    private Beverage bev;
+    private Set<Beverage> beverageList;
 
-    @BeforeEach
-    public void setUp() {
-
-        bev = BeverageFactory.createBeverage("Hot chocolate", "Hot Drinks", 25);
-    }
     @Test
-    void testCreateBeverage()
+    void testBeverageList()
     {
-        assertTrue(service.saveBeverage(bev));
-        System.out.println(bev);
+        beverageList = service.getBeverageList();
+
+        for(Beverage bev : beverageList) {
+            System.out.println(bev.toString());
+        }
     }
 
 
