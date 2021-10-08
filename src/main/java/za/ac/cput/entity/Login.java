@@ -1,5 +1,8 @@
 package za.ac.cput.entity;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
+
 /**
  * Login.java
  * Entity for the Login
@@ -7,12 +10,16 @@ package za.ac.cput.entity;
  * Date: 13 September 2021
  */
 
+@Entity
 public class Login {
 
     //Attributes
+        @Id
         private String studentNumber;
         private String username;
         private String password;
+
+    protected Login(){}
 
     public Login(Builder builder) {
         this.studentNumber = builder.studentNumber;

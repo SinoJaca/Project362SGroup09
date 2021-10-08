@@ -1,5 +1,8 @@
 package za.ac.cput.entity;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
+
 /**
  * Student.java
  * Entity for the Student
@@ -7,10 +10,15 @@ package za.ac.cput.entity;
  * Date: 13 September 2021
  **/
 
+@Entity
 public class Student {
 
     //Attributes
-        private String studentNumber, firstName, lastName, emailAddress, phoneNumber;
+        @Id
+        private String studentNumber;
+        private String firstName, lastName, emailAddress, phoneNumber;
+
+    protected Student(){}
 
     public Student(Builder builder) {
         this.studentNumber = builder.studentNumber;
